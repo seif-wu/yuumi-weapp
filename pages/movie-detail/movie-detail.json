@@ -1,0 +1,7 @@
+{
+  "navigationStyle": "custom",
+  "backgroundColor": "#fff",
+  "usingComponents": {
+    "tag": "../../components/tag/tag"
+  }
+}

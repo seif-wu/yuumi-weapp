@@ -1,0 +1,7 @@
+<view class="statistic">
+  <slot name="prefix"></slot>
+  <view class="statistic-box">
+    <view class="statistic-title">{{title}}</view>
+    <view class="statistic-content">{{value}}</view>
+  </view>
+</view>

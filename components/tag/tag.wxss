@@ -1,0 +1,16 @@
+.tag {
+  box-sizing: border-box;
+  margin: 0 16rpx 0 0;
+  font-variant: tabular-nums;
+  line-height: 1.5715;
+  list-style: none;
+  font-feature-settings: "tnum";
+  display: inline-block;
+  height: auto;
+  padding: 0 14rpx;
+  font-size: 10pt;
+  white-space: nowrap;
+  border-radius: 4rpx;
+  opacity: 1;
+  transition: all .3s;
+}

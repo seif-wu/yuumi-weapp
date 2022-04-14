@@ -1,19 +1,137 @@
-/**index.wxss**/
-.userinfo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  color: #aaa;
+.background-box {
+  position: fixed;
+  z-index: -1;
+  top: 0;
+  width: 100%;
+  height: 60vh;
+  background: radial-gradient(circle farthest-side at 100vw 40rpx, #1884B0, #90d8c4, #fff);
 }
 
-.userinfo-avatar {
-  overflow: hidden;
+.bottom-background-box {
+  position: fixed;
+  bottom: -90rpx;
+  z-index: -1;
+  width: 100%;
+  height: 40vh;
+}
+
+.container {
+  min-height: 100vh;
+}
+
+/* logo 样式 start */
+.logo-box {
+  top: 0;
+  width: 100%;
+  position: fixed;
+  padding: 32rpx;
+}
+
+.logo-img {
   width: 128rpx;
   height: 128rpx;
-  margin: 20rpx;
-  border-radius: 50%;
 }
 
-.usermotto {
-  margin-top: 200px;
+.trends-box {
+  padding: 16rpx 32rpx;
+}
+
+.section-title {
+  font-size: 17pt;
+  font-weight: 500;
+}
+
+/* 趋势列表 */
+.trends-list {
+  display: flex;
+  margin-top: 16rpx;
+}
+
+/* 趋势列表 item */
+.trends-item {
+  flex: 1;
+  padding: 0 16rpx;
+}
+
+.trends-item-desc {
+  padding: 12rpx;
+}
+
+.trends-item-title {
+  display: block;
+  max-width: 240rpx;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  font-weight: 500;
+}
+
+.trends-item-date {
+  padding-top: 8rpx;
+  display: block;
+  font-weight: 400;
+  font-size: 10pt;
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.swiper-box {
+  margin-top: 16rpx;
+  height: 360rpx;
+}
+
+.swiper-content {
+  padding: 16rpx;
+  color: #fff;
+  border-radius: 24rpx;
+  display: flex;
+  flex-direction: column-reverse;
+
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, rgba(3, 37, 65, 0.75) 0%, rgba(3, 37, 65, 0.75) 100%);
+}
+
+.swiper-item-container {
+  padding: 16rpx;
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-content-box {
+  border-radius: 24rpx;
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* 海报样式 */
+.poster {
+  width: 240rpx;
+  height: 360rpx;
+  border-radius: 24rpx;
+}
+
+/* 热门电影 */
+.popular-movies-box {
+  padding: 16rpx 32rpx;
+}
+
+.popular-tv-box {
+  padding: 16rpx 32rpx;
+}
+
+.latest-movie {
+  padding: 16rpx 32rpx;
+}
+
+.swiper-content-title {
+
+  font-size: 17pt;
+}
+
+.swiper-content-overview {
+  font-size: 10pt;
+  color: #ffffffd5;
 }

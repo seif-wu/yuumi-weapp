@@ -1,23 +1,77 @@
-<!--index.wxml-->
-<view class="container">
-  <view class="userinfo">
-    <block wx:if="{{canIUseOpenData}}">
-      <view class="userinfo-avatar" bindtap="bindViewTap">
-        <open-data type="userAvatarUrl"></open-data>
+<view class="background-box" />
+<view class="container" style="padding-top: {{navBarHeight + 134}}rpx;">
+  <view class="trends-box">
+    <view>
+      <text class="section-title">趋势</text>
+    </view>
+    <scroll-view scroll-x>
+      <view class="trends-list">
+        <view class="trends-item" wx:for="{{trends}}" wx:key="id">
+          <image class="poster" src="{{item.poster_path}}" mode="aspectFill" />
+          <view class="trends-item-desc">
+            <text class="trends-item-title">{{item.title || item.name}}</text>
+            <text class="trends-item-date">{{item.release_date || item.first_air_date}}</text>
+          </view>
+        </view>
       </view>
-      <open-data type="userNickName"></open-data>
-    </block>
-    <block wx:elif="{{!hasUserInfo}}">
-      <button wx:if="{{canIUseGetUserProfile}}" bindtap="getUserProfile"> 获取头像昵称 </button>
-      <button wx:elif="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-      <view wx:else> 请使用1.4.4及以上版本基础库 </view>
-    </block>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
+    </scroll-view>
   </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
+
+  <view class="latest-movie">
+    <view>
+      <text class="section-title">正在上映</text>
+    </view>
+    <swiper class="swiper-box" easing-function="linear" autoplay circular>
+      <swiper-item class="swiper-item" wx:for="{{nowPlayingMovies}}" item-id="{{item.id}}">
+        <view class="swiper-item-container">
+          <view class="swiper-content-box" style="background-image: url('{{item.backdrop_path}}');">
+            <view class="swiper-content">
+              <view>
+                <view class="swiper-content-title">{{item.title}}</view>
+                <view class="swiper-content-overview">{{item.release_date}}</view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </swiper-item>
+    </swiper>
   </view>
+
+  <view class="popular-movies-box">
+    <view>
+      <text class="section-title">热门电影</text>
+    </view>
+    <scroll-view scroll-x>
+      <view class="trends-list">
+        <view class="trends-item" wx:for="{{popularMovies}}" wx:key="id">
+          <image class="poster" src="{{item.poster_path}}" mode="aspectFill" />
+          <view class="trends-item-desc">
+            <text class="trends-item-title">{{item.title || item.name}}</text>
+            <text class="trends-item-date">{{item.release_date || item.first_air_date}}</text>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+
+  <view class="popular-tv-box">
+    <view>
+      <text class="section-title">热门剧集</text>
+    </view>
+    <scroll-view scroll-x>
+      <view class="trends-list">
+        <view class="trends-item" wx:for="{{popularTv}}" wx:key="id">
+          <image class="poster" src="{{item.poster_path}}" mode="aspectFill" />
+          <view class="trends-item-desc">
+            <text class="trends-item-title">{{item.title || item.name}}</text>
+            <text class="trends-item-date">{{item.release_date || item.first_air_date}}</text>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+</view>
+
+<view class="logo-box" style="padding-top: {{navBarHeight - 20}}rpx">
+  <image class="logo-img" src="../../assets/logo-black.png"></image>
 </view>

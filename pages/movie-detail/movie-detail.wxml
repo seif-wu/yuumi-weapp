@@ -1,0 +1,15 @@
+<!-- <image src="{{record.poster_path}}" class="poster-background" mode="widthFix" /> -->
+<view class="content-container">
+  <view class="content-box">
+    <view class="release-date">{{record.release_date}}</view>
+    <view class="title">
+      {{record.title}}
+    </view>
+    <view class="genres-box">
+      <tag wx:for="{{record.genres}}" wx:key="id" color="#333" background="#b5f5ec" value="{{item.name}}" />
+    </view>
+    <view class="overview">
+      {{record.overview}}
+    </view>
+  </view>
+</view>

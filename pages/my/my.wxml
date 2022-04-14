@@ -1,0 +1,48 @@
+<!-- 未登录时 -->
+<view class="top-bg-container">
+  <image class="avatar" src="../../assets/no-login-icon.png" />
+  <text class="login-tip">登录</text>
+</view>
+
+<view class="card-container">
+  <view class="card info-card">
+    <view class="user-info-setting-box">
+      <image class="icon" src="../../assets/个人设置.png" />
+      <text class="title">个人资料</text>
+      <image class="arrow-icon" src="../../assets/arrow.png" />
+    </view>
+    <view class="divider" />
+    <view class="stats-box">
+      <text class="title">您共观看了</text>
+      <view class="stats-content">
+        <view style="min-width: 228rpx;">
+          <statistic title="电影" value="99">
+            <image slot="prefix" style="width: 72rpx; height: 72rpx;" src="../../assets/剧集.png" />
+          </statistic>
+        </view>
+        <view style="min-width: 228rpx;">
+          <statistic title="剧集" value="0">
+            <image slot="prefix" style="width: 72rpx; height: 72rpx;" src="../../assets/影视.png" />
+          </statistic>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <scroll-view class="scroll-container" scroll-y>
+    <view class="card action-card">
+      <view class="user-info-setting-box">
+        <image class="icon" src="../../assets/容量器.png" />
+        <text class="title">剩余容量</text>
+        <text style="font-weight: 500; font-size: 32rpx;">9999</text>
+      </view>
+      <view class="divider" />
+      <view class="user-info-setting-box">
+        <image class="icon" src="../../assets/设置.png" />
+        <text class="title">应用设置</text>
+        <image class="arrow-icon" src="../../assets/arrow.png" />
+      </view>
+
+    </view>
+  </scroll-view>
+</view>
