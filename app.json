@@ -5,11 +5,11 @@
     "pages/logs/logs",
     "pages/movie-detail/movie-detail"
   ],
-  "entryPagePath": "pages/movie-detail/movie-detail",
+  "entryPagePath": "pages/index/index",
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "Weixin",
+    "navigationBarTitleText": "Yuumi",
     "navigationBarTextStyle": "black"
   },
   "tabBar": {
