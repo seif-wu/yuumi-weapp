@@ -1,4 +1,4 @@
-<!-- <image src="{{record.poster_path}}" class="poster-background" mode="widthFix" /> -->
+<image src="{{record.poster_path}}" class="poster-background" mode="widthFix" />
 <view class="content-container">
   <view class="content-box">
     <view class="release-date">{{record.release_date}}</view>
@@ -10,6 +10,46 @@
     </view>
     <view class="overview">
       {{record.overview}}
+    </view>
+
+    <view class="info-box">
+      <view class="label-vlaue-box">
+        <view class="label">
+          原始标题
+        </view>
+        <view class="value">
+          {{record.original_title}}
+        </view>
+      </view>
+    </view>
+
+    <view class="info-box">
+      <view class="label-vlaue-box" style="flex: 0 0 50%;">
+        <view class="label">
+          流行度
+        </view>
+        <view class="value">
+          {{record.popularity}}
+        </view>
+      </view>
+
+      <view class="label-vlaue-box" style="flex: 0 0 50%;">
+        <view class="label">
+          时长
+        </view>
+        <view class="value">
+          {{record.runtime}} 分钟
+        </view>
+      </view>
+    </view>
+
+    <view class="action-box">
+      <button class="seen-action">标记为看过</button>
+    </view>
+
+    <!-- 添加到我想看 -->
+    <view class="want-to-watch-box">
+      <image mode="widthFix" src="../../assets/想看.png" style="width: 64rpx" />
     </view>
   </view>
 </view>

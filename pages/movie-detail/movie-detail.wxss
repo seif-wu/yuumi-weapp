@@ -48,7 +48,7 @@
 /* ****************** 电影标题样式 ********************* */
 
 .title {
-  margin-top: 8rpx;
+  margin: 8rpx 0;
   font-size: 17pt;
 }
 
@@ -57,7 +57,7 @@
 /* ****************** 电影标题样式 ********************* */
 
 .overview {
-  margin-top: 8rpx;
+  margin: 16rpx 0;
   font-size: 10pt;
   color: rgba(0, 0, 0, 0.45);
 }
@@ -65,7 +65,59 @@
 /* *************************************************** */
 
 /* ****************** 电影分类样式 ********************* */
+
 .genres-box {
-  margin: 8rpx;
+  margin: 8rpx 0;
 }
+
+/* *************************************************** */
+
+/* ****************** 标题内容样式 ********************* */
+.info-box {
+  display: flex;
+}
+
+.label-vlaue-box {
+  margin: 8rpx 0;
+}
+
+.label-vlaue-box .label {
+  font-size: 10pt;
+  color: rgba(0, 0, 0, 0.65);
+}
+
+.label-vlaue-box .value {
+  color: rgba(0, 0, 0, 0.8);
+}
+/* *************************************************** */
+
+/* ****************** 添加到想看样式 ******************** */
+
+.want-to-watch-box {
+  position: absolute;
+  padding: 16rpx;
+  border-radius: 50%;
+  background-color: #fff;
+  top: -40rpx;
+  right: 64rpx;
+}
+
+/* *************************************************** */
+
+/* ****************** 操作按钮样式 ******************** */
+
+.action-box {
+  margin: 32rpx 0;
+  width: 100%;
+  display: flex;
+}
+
+.action-box .seen-action {
+  flex: 1;
+  background: #90d8c4;
+  background: linear-gradient(to left, #1884B0, #90d8c4);
+  border-radius: 48rpx;
+  color: #fff
+}
+
 /* *************************************************** */

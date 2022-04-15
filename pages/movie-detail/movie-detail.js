@@ -18,7 +18,7 @@ Page({
    */
   onLoad(options = {}) {
     const { id } = options;
-    this.fetchMovie(810693);
+    this.fetchMovie(id);
   },
 
   /**
