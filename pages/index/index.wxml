@@ -6,7 +6,7 @@
     </view>
     <scroll-view scroll-x>
       <view class="trends-list">
-        <view class="trends-item" wx:for="{{trends}}" wx:key="id">
+        <view class="trends-item" wx:for="{{trends}}" wx:key="id" data-record="{{item}}" bindtap="navigateToDetail">
           <image class="poster" src="{{item.poster_path}}" mode="aspectFill" />
           <view class="trends-item-desc">
             <text class="trends-item-title">{{item.title || item.name}}</text>
@@ -22,7 +22,7 @@
       <text class="section-title">正在上映</text>
     </view>
     <swiper class="swiper-box" easing-function="linear" autoplay circular>
-      <swiper-item class="swiper-item" wx:for="{{nowPlayingMovies}}" item-id="{{item.id}}">
+      <swiper-item class="swiper-item" wx:for="{{nowPlayingMovies}}" item-id="{{item.id}}" data-record="{{item}}" bindtap="navigateToDetail">
         <view class="swiper-item-container">
           <view class="swiper-content-box" style="background-image: url('{{item.backdrop_path}}');">
             <view class="swiper-content">
@@ -43,7 +43,7 @@
     </view>
     <scroll-view scroll-x>
       <view class="trends-list">
-        <view class="trends-item" wx:for="{{popularMovies}}" wx:key="id">
+        <view class="trends-item" wx:for="{{popularMovies}}" wx:key="id" data-record="{{item}}" bindtap="navigateToDetail">
           <image class="poster" src="{{item.poster_path}}" mode="aspectFill" />
           <view class="trends-item-desc">
             <text class="trends-item-title">{{item.title || item.name}}</text>
@@ -60,7 +60,7 @@
     </view>
     <scroll-view scroll-x>
       <view class="trends-list">
-        <view class="trends-item" wx:for="{{popularTv}}" wx:key="id">
+        <view class="trends-item" wx:for="{{popularTv}}" wx:key="id" data-record="{{item}}" bindtap="navigateToDetail">
           <image class="poster" src="{{item.poster_path}}" mode="aspectFill" />
           <view class="trends-item-desc">
             <text class="trends-item-title">{{item.title || item.name}}</text>

@@ -104,4 +104,15 @@ Page({
       }),
     });
   },
+
+  // 调整到详情页
+  navigateToDetail: function (e) {
+    const { currentTarget: { dataset: { record } } } = e;
+
+    if (record.media_type === 'movie') {
+      wx.navigateTo({
+        url: `/pages/movie-detail/movie-detail?id=${record.id}`
+      })
+    }
+  },
 })
