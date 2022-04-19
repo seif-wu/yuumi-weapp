@@ -1,11 +1,12 @@
 {
   "pages": [
+    "pages/login/login",
     "pages/index/index",
     "pages/my/my",
     "pages/logs/logs",
     "pages/movie-detail/movie-detail"
   ],
-  "entryPagePath": "pages/index/index",
+  "entryPagePath": "pages/login/login",
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",

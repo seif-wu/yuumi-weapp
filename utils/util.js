@@ -37,3 +37,8 @@ const formatNumber = (n) => {
   const s = n.toString()
   return s[1] ? s : '0' + s
 }
+
+export const px2rpx = function (pxNumber) {
+  const { screenWidth } = wx.getSystemInfoSync();
+  return (750 / screenWidth) * pxNumber;
+};

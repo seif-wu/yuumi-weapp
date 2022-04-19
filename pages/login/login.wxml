@@ -1,0 +1,10 @@
+<view class="background-box" />
+<view class="container" style="padding-bottom: {{safeBottomHeight + 32}}rpx; ">
+  <view class="product-desc-box">
+    <image class="logo" src="../../assets/logo-black.png" />
+    <text class="desc">记录观影历史、欲看清单</text>
+  </view>
+  <view class="action-box">
+    <button class="login-action">微信一键登录</button>
+  </view>
+</view>

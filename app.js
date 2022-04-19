@@ -8,6 +8,8 @@ App({
     menuButton: 0,
     // 胶囊高度（自定义内容可与胶囊高度保证一致）
     menuHeight: 0,
+    // 底部安全距离
+    safeBottomHeight: 0,
     // 当前用户
     currentUser: null,
   },
@@ -20,5 +22,6 @@ App({
     this.globalData.menuRight = systemInfo.screenWidth - menuButtonInfo.right;
     this.globalData.menuButton = menuButtonInfo.top - systemInfo.statusBarHeight;
     this.globalData.menuHeight = menuButtonInfo.height;
+    this.globalData.safeBottomHeight = systemInfo.screenHeight - systemInfo.safeArea.bottom;
   },
 })

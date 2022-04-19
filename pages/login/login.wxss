@@ -1,0 +1,65 @@
+.background-box {
+  position: fixed;
+  z-index: -1;
+  top: 0;
+  width: 100%;
+  background: radial-gradient(circle farthest-side at 10vw 40rpx, #bbfae8, #fff, #bbfae8);
+	background-size: 150% 150%;
+  animation: gradient 10s ease infinite;
+  height: 100vh;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0 32rpx;
+}
+
+.product-desc-box {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo {
+  width: 375rpx;
+  height: 375rpx;
+}
+
+.desc {
+  color: rgba(0, 0, 0, 0.5);
+  font-style: italic;
+}
+
+/* ****************** 操作按钮样式 ******************** */
+
+.action-box {
+  margin: 32rpx 0;
+  width: 100%;
+  display: flex;
+}
+
+.action-box .login-action {
+  flex: 1;
+  background: #90d8c4;
+  background: linear-gradient(to left, #1884B0, #90d8c4);
+  border-radius: 48rpx;
+  color: #fff
+}
+
+/* *************************************************** */
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
