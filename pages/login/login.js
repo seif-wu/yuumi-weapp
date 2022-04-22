@@ -1,4 +1,5 @@
-import { px2rpx } from '../../utils/util';
+import { px2rpx, callback2promise } from '../../utils/util';
+import api from '../../utils/api';
 
 const app = getApp();
 
@@ -65,5 +66,32 @@ Page({
    */
   onShareAppMessage() {
 
-  }
-})
+  },
+
+  tapLogin: async function () {
+    const infoRes = await callback2promise(wx.getUserProfile)({
+      lang: 'zh_CN',
+      desc: '您的信息将用于登录或创建用户',
+    });
+
+    // 拒绝授权时暂不处理
+    if (!infoRes.errMsg) {
+      return;
+    }
+
+    const wxLoginRes = await callback2promise(wx.login)();
+
+    const payload = {
+      avatar_url: infoRes.userInfo.avatarUrl,
+      name: infoRes.userInfo.nickName,
+      js_code: wxLoginRes.code,
+    }
+
+    const { response, error } = await api.post({
+      url: '/api/v1/weapp/auth',
+      body: payload
+    })
+
+    console.log(response, error)
+  },
+});
