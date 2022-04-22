@@ -2,3 +2,5 @@ node_modules
 miniprogram_npm
 miniprogram/configs/develop.js
 project.private.config.json
+
+configs/develop.js
