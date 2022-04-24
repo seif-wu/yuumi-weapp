@@ -92,6 +92,18 @@ Page({
       body: payload
     })
 
-    console.log(response, error)
+    if (error) {
+      // TODO 提示登录失败
+      return
+    }
+
+    await callback2promise(wx.setStorage)({
+      key: "access_token",
+      data: response.access_token,
+    });
+
+    wx.navigateBack({
+      delta: 1
+    });
   },
 });

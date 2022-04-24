@@ -22,7 +22,7 @@ const request = async (options) => {
 
   const accessToken = getAccessToken();
   if (accessToken) {
-    nextOptions['header']['Authorization'] = accessToken;
+    nextOptions['header']['Authorization'] = `Bearer ${accessToken}`;
   }
 
   return callback2promise(wx.request)(nextOptions, true)
