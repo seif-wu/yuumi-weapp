@@ -1,7 +1,7 @@
-<!-- 未登录时 -->
 <view class="top-bg-container">
-  <image class="avatar" src="../../assets/no-login-icon.png" />
-  <text class="login-tip">登录</text>
+  <image class="avatar" wx:if="{{user.avatar_url}}" src="{{user.avatar_url}}" />
+  <image class="avatar" wx:else src="../../assets/no-login-icon.png" />
+  <text class="username">{{user.name}}</text>
 </view>
 
 <view class="card-container">

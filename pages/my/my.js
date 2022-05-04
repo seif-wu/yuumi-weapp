@@ -1,4 +1,6 @@
-import { callback2promise } from '../../utils/util';
+import api from '../../utils/api';
+
+const app = getApp();
 
 Page({
 
@@ -6,19 +8,35 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    user: {},
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad() {},
+  async onLoad() {
+    const { response, error } = await api.get({
+      url: '/api/v1/weapp/user',
+    });
+
+    if (error) {
+      wx.showToast({
+        title: '出错了',
+        icon: 'fail',
+        duration: 2000
+      })
+    }
+
+    this.setData({
+      user: response.data,
+    });
+  },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady() {
-
+    this.fetchCurrentUser();
   },
 
   /**
@@ -66,7 +84,7 @@ Page({
   /**
    * 阻止默认滚动事件
    */
-  handleTouchMove: function () {},
+  handleTouchMove: function () { },
 
   /**
    * 处理登录逻辑
@@ -74,4 +92,24 @@ Page({
   handleLogin: async function () {
 
   },
+
+  /**
+   * 请求当前用户
+   */
+  fetchCurrentUser: async function () {
+    const { response, error, status } = await api.get({
+      url: "/api/v1/weapp/user",
+    });
+
+    if (status !== 401) {
+      // 需要先登录
+    }
+
+    if (error) {
+      // TODO 跳转到出错页面
+    }
+
+    app.globalData.currentUser = response;
+    console.log(response, error)
+  }
 })
