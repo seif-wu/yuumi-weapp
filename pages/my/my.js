@@ -14,29 +14,15 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  async onLoad() {
-    const { response, error } = await api.get({
-      url: '/api/v1/weapp/user',
-    });
-
-    if (error) {
-      wx.showToast({
-        title: '出错了',
-        icon: 'fail',
-        duration: 2000
-      })
-    }
-
-    this.setData({
-      user: response.data,
-    });
+  onLoad() {
+    this.fetchCurrentUser();
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady() {
-    this.fetchCurrentUser();
+
   },
 
   /**
@@ -98,18 +84,30 @@ Page({
    */
   fetchCurrentUser: async function () {
     const { response, error, status } = await api.get({
-      url: "/api/v1/weapp/user",
+      url: '/api/v1/weapp/user',
     });
 
-    if (status !== 401) {
-      // 需要先登录
+    if (status === 401) {
+      wx.redirectTo({
+        url: '/pages/login/login'
+      });
+      return;
     }
 
     if (error) {
       // TODO 跳转到出错页面
+      wx.showToast({
+        title: '出错了',
+        icon: 'fail',
+        duration: 2000
+      })
+      return;
     }
 
+    this.setData({
+      user: response.data,
+    });
+
     app.globalData.currentUser = response;
-    console.log(response, error)
   }
 })
