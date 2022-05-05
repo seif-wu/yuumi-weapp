@@ -4,8 +4,6 @@
   top: 0;
   width: 100%;
   background: radial-gradient(circle farthest-side at 10vw 40rpx, #bbfae8, #fff, #bbfae8);
-	background-size: 150% 150%;
-  animation: gradient 10s ease infinite;
   height: 100vh;
 }
 
@@ -44,22 +42,14 @@
 
 .action-box .login-action {
   flex: 1;
-  background: #90d8c4;
-  background: linear-gradient(to left, #1884B0, #90d8c4);
-  border-radius: 48rpx;
-  color: #fff
+  display: flex;
+  height: 88rpx;
+  margin: 64rpx;
+  color: #333;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  border-radius: 32rpx;
 }
 
 /* *************************************************** */
-
-@keyframes gradient {
-	0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
-}
