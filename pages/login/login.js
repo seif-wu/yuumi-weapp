@@ -1,5 +1,6 @@
 import { px2rpx, callback2promise } from '../../utils/util';
 import api from '../../utils/api';
+import backIn from '../../utils/animates/backIn';
 
 const app = getApp();
 
@@ -30,18 +31,8 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow() {
-    this.loginButtonAnimation();
-  },
-
-  /**
-   * 登录按钮入场动画
-   */
-  loginButtonAnimation: function () {
-    this.animate(".action-box", [
-      { translateY: 1200, scale: [0.7, 0.7], opacity: 0.7, offset: 0 },
-      { translateY: 0, scale: [0.7, 0.7], opacity: 0.7 , offset: 0.8 },
-      { scale: [1, 1], opacity: 1, offset: 1},
-    ], 1500)
+    // 登录按钮入场动画
+    backIn.up.bind(this, ".action-box")();
   },
 
   tapLogin: async function () {
