@@ -65,3 +65,10 @@
 }
 
 /* *************************************************** */
+
+.home-icon {
+  position: absolute;
+  left: 32rpx;
+  width: 54rpx;
+  height: 54rpx;
+}

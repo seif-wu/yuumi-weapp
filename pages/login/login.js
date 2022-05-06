@@ -11,6 +11,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    navBarHeight: app.globalData.navBarHeight,
     safeBottomHeight: px2rpx(app.globalData.safeBottomHeight),
     redirect: '',
   },
@@ -84,6 +85,10 @@ Page({
       return;
     }
 
+    this.redirectToHome()
+  },
+
+  redirectToHome: function () {
     wx.redirectTo({
       url: '/pages/index/index'
     });

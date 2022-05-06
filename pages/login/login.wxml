@@ -1,4 +1,6 @@
+<!-- home-icon-1.png -->
 <view class="background-box" />
+<image bindtap="redirectToHome" class="home-icon" style="top: {{navBarHeight + 18}}rpx" src="../../assets/home-icon-1.png" />
 <view class="container" style="padding-bottom: {{safeBottomHeight + 32}}rpx; ">
   <view class="product-desc-box">
     <image class="logo" src="../../assets/logo-black.png" />
