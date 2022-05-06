@@ -89,7 +89,7 @@ Page({
 
     if (status === 401) {
       wx.redirectTo({
-        url: '/pages/login/login'
+        url: '/pages/login/login?redirect=/pages/my/my'
       });
       return;
     }

@@ -1,6 +1,7 @@
 import { px2rpx, callback2promise } from '../../utils/util';
 import api from '../../utils/api';
 import backIn from '../../utils/animates/backIn';
+import fadeIn from '../../utils/animates/fadeIn';
 
 const app = getApp();
 
@@ -11,13 +12,16 @@ Page({
    */
   data: {
     safeBottomHeight: px2rpx(app.globalData.safeBottomHeight),
+    redirect: '',
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-
+    this.setData({
+      redirect: options.redirect,
+    });
   },
 
   /**
@@ -33,6 +37,8 @@ Page({
   onShow() {
     // 登录按钮入场动画
     backIn.up.bind(this, ".action-box")();
+    // Logo
+    fadeIn.default.bind(this, ".logo", 1000)();
   },
 
   tapLogin: async function () {
@@ -69,8 +75,17 @@ Page({
       data: response.access_token,
     });
 
-    wx.navigateBack({
-      delta: 1
+    const { redirect } = this.data;
+    if (redirect) {
+      wx.redirectTo({
+        url: redirect
+      });
+
+      return;
+    }
+
+    wx.redirectTo({
+      url: '/pages/index/index'
     });
   },
 });

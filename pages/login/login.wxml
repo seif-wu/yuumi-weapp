@@ -2,7 +2,6 @@
 <view class="container" style="padding-bottom: {{safeBottomHeight + 32}}rpx; ">
   <view class="product-desc-box">
     <image class="logo" src="../../assets/logo-black.png" />
-    <text class="desc">观影历清单小助手</text>
   </view>
   <view class="action-box">
     <button bindtap="tapLogin" class="login-action">微信一键登录</button>
