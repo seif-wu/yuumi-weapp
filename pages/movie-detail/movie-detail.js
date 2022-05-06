@@ -1,6 +1,7 @@
 import api from '../../utils/api';
 import config from '../../config';
 
+const app = getApp();
 const { baseUrl } = config;
 
 Page({
@@ -9,6 +10,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    navBarHeight: app.globalData.navBarHeight,
     baseUrl,
     record: {},
   },
@@ -88,4 +90,8 @@ Page({
       },
     });
   },
+
+  goBack: function () {
+    wx.navigateBack()
+  }
 })

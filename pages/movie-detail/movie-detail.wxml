@@ -1,4 +1,5 @@
 <image src="{{record.poster_path}}" class="poster-background" mode="widthFix" />
+<image bindtap="goBack" class="goback-icon" style="top: {{navBarHeight + 18}}rpx" src="../../assets/回退.png" />
 <view class="content-container">
   <view class="content-box">
     <view class="release-date">{{record.release_date}}</view>
