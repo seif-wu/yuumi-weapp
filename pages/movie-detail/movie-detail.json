@@ -1,5 +1,6 @@
 {
   "navigationStyle": "custom",
+  "navigationBarTextStyle": "white",
   "backgroundColor": "#fff",
   "usingComponents": {
     "tag": "../../components/tag/tag"
